@@ -10,8 +10,3 @@
     RUN apt-get update  -qq \
         && apt-get install docker-ce=17.12.1~ce-0~debian -y
     RUN usermod -aG docker jenkins
-
-    FROM openjdk:8
-    ADD target/java-jenkins-docker.jar java-jenkins-docker.jar
-    ENTRYPOINT ["java", "-jar","java-jenkins-docker.jar"]
-    EXPOSE 8080
